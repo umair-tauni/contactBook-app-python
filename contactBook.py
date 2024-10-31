@@ -30,6 +30,30 @@ class ContactBook:
             print('Total Contacts:', self.total_contacts)
             print('********************************')
 
+    # method to create new contact
+    def creating_contact(self):
+        try:
+            name = input('Enter Contact Name: ').lower()
+            if name in self.contact_dict:
+                print(f'Contact with this name {name} already exist')
+                print('***********************************************')
+            else:
+                age = int(input('Enter Age: '))
+                email = input('Enter Email: ')
+                phone_number = input('Enter Phone Number: ')
+                is_fav = input('Is Contact Favorite: (y/n) ').lower()
+                favorite = True if is_fav == 'y' else False
+                self.contact_dict[name] = {
+                    'Age': age,
+                    'Email': email,
+                    'Phone Number': phone_number,
+                    'Favorite': favorite
+                }
+                print('Contact Saved Successfully!!')
+                print('************************************************')
+                self.total_contacts+=1
+        except Exception as e:
+            print(e)
 
 # calling static method
 ContactBook.welcome()
@@ -39,3 +63,5 @@ myContact_book = ContactBook()
 result = myContact_book.menu()
 if result == 0:
     myContact_book.total_number_contacts()
+elif result == 1:
+    myContact_book.creating_contact()
