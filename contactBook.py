@@ -33,3 +33,7 @@ class ContactBook:
 ContactBook.welcome()
 # create object from class
 myContact_book = ContactBook()
+# methods run on user choice
+result = myContact_book.menu()
+if result == 0:
+    myContact_book.total_number_contacts()
