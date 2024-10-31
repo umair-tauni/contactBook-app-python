@@ -9,6 +9,7 @@ class ContactBook:
         print('Welcome to Contact Book')
         print()
     
+    # menu display method
     def menu(self):
         print('0. Total Number Contacts')
         print('1. Create Contact')
@@ -20,6 +21,7 @@ class ContactBook:
         choice = int(input('Choose: '))
         return choice
 
+    # method to view total number of contacts
     def total_number_contacts(self):
         if self.total_contacts == 0:
             print('No contact found')
