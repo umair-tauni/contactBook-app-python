@@ -20,6 +20,13 @@ class ContactBook:
         choice = int(input('Choose: '))
         return choice
 
+    def total_number_contacts(self):
+        if self.total_contacts == 0:
+            print('No contact found')
+        else:
+            print('Total Contacts:', self.total_contacts)
+
+
 # calling static method
 ContactBook.welcome()
 # create object from class
