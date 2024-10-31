@@ -89,6 +89,19 @@ class ContactBook:
         except Exception as e:
             print(e)
 
+    # method to search contact
+    def search_contact(self):
+        name = input('Enter name to search: ').lower()
+        if name not in self.contact_dict:
+            print('No Record Found')
+            print('*******************************************')
+        else:
+            s_contact = self.contact_dict[name]
+            print(f'Contact Found - {name}')
+            for attribute, value in s_contact.items():
+                print(f'{attribute} - {value}')
+            print('******************************************')
+
 # calling static method
 ContactBook.welcome()
 # create object from class
@@ -103,3 +116,5 @@ elif result == 2:
     myContact_book.view_contact()
 elif result == 3:
     myContact_book.update_contact()
+elif result == 4:
+    myContact_book.search_contact()
