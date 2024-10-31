@@ -25,8 +25,10 @@ class ContactBook:
     def total_number_contacts(self):
         if self.total_contacts == 0:
             print('No contact found')
+            print('*******************************')
         else:
             print('Total Contacts:', self.total_contacts)
+            print('********************************')
 
 
 # calling static method
