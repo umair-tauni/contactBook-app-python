@@ -102,6 +102,21 @@ class ContactBook:
                 print(f'{attribute} - {value}')
             print('******************************************')
 
+    # method to delete contact
+    def delete_contact(self):
+        try:
+            name = input('Enter Contact Name: ')
+            if name not in self.contact_dict:
+                print(f'No contact found with this {name} name')
+                print('***************************************')
+            else:
+                del self.contact_dict[name]
+                self.total_contacts-=1
+                print(f'{name} Conatact deleted successfully')
+                print('***************************************')
+        except Exception as e:
+            print(e)
+
 # calling static method
 ContactBook.welcome()
 # create object from class
@@ -118,3 +133,5 @@ elif result == 3:
     myContact_book.update_contact()
 elif result == 4:
     myContact_book.search_contact()
+elif result == 5:
+    myContact_book.delete_contact()
