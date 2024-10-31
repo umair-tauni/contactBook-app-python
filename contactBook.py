@@ -65,6 +65,29 @@ class ContactBook:
                 print(f'{name} - {info}')
             print('*******************************************')
     
+    # method to update contact
+    def update_contact(self):
+        try:
+            name = input('Enter Contact Name: ').lower()
+            if name not in self.contact_dict:
+                print(f'Contact with this name {name} not exist')
+                print('*******************************************')
+            else:
+                age = int(input('Enter Age: '))
+                email = input('Enter Email: ')
+                phone_number = input('Enter Phone Number: ')
+                is_fav = input('Is Contact Favorite (y/n): ').lower()
+                favorite = True if is_fav is 'y' else False
+                self.contact_dict[name] = {
+                    'Age': age,
+                    'Email': email,
+                    'Phone Number': phone_number,
+                    'Favorite': favorite
+                }
+                print('Contact Updated Successfully')
+                print('*******************************************')
+        except Exception as e:
+            print(e)
 
 # calling static method
 ContactBook.welcome()
@@ -78,3 +101,5 @@ elif result == 1:
     myContact_book.creating_contact()
 elif result == 2:
     myContact_book.view_contact()
+elif result == 3:
+    myContact_book.update_contact()
