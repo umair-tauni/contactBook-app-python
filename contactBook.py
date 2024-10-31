@@ -121,17 +121,28 @@ class ContactBook:
 ContactBook.welcome()
 # create object from class
 myContact_book = ContactBook()
-# methods run on user choice
-result = myContact_book.menu()
-if result == 0:
-    myContact_book.total_number_contacts()
-elif result == 1:
-    myContact_book.creating_contact()
-elif result == 2:
-    myContact_book.view_contact()
-elif result == 3:
-    myContact_book.update_contact()
-elif result == 4:
-    myContact_book.search_contact()
-elif result == 5:
-    myContact_book.delete_contact()
+
+# while loop to run program continuously
+while True:
+    try:
+        # conditions to run methods on user choice
+        result = myContact_book.menu()
+        if result == 0:
+            myContact_book.total_number_contacts()
+        elif result == 1:
+            myContact_book.creating_contact()
+        elif result == 2:
+            myContact_book.view_contact()
+        elif result == 3:
+            myContact_book.update_contact()
+        elif result == 4:
+            myContact_book.search_contact()
+        elif result == 5:
+            myContact_book.delete_contact()
+        elif result == 6:
+            break
+        else:
+            print('Please choose valid number..')
+    except Exception as e:
+        print(e)
+
