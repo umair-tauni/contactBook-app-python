@@ -55,6 +55,17 @@ class ContactBook:
         except Exception as e:
             print(e)
 
+    # method to view contact
+    def view_contact(self):
+        if self.total_contacts == 0:
+            print('No Record Found')
+            print('****************************************')
+        else:
+            for name, info in self.contact_dict.items():
+                print(f'{name} - {info}')
+            print('*******************************************')
+    
+
 # calling static method
 ContactBook.welcome()
 # create object from class
@@ -65,3 +76,5 @@ if result == 0:
     myContact_book.total_number_contacts()
 elif result == 1:
     myContact_book.creating_contact()
+elif result == 2:
+    myContact_book.view_contact()
