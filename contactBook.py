@@ -19,4 +19,8 @@ class ContactBook:
         print('6. Exit')
         choice = int(input('Choose: '))
         return choice
-    
+
+# calling static method
+ContactBook.welcome()
+# create object from class
+myContact_book = ContactBook()
